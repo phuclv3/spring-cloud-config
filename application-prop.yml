@@ -1,0 +1,49 @@
+spring:
+   profiles:
+      active: prop
+   datasource:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/digital_sign?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+      hikari:
+         data-source-properties:
+            characterEncoding: UTF-8
+      username: root
+      password: 1234
+   jpa:
+      show-sql: true
+      hibernate:
+         ddl-auto: none
+      properties:
+         hibernate:
+            format_sql: true
+            dialect: org.hibernate.dialect.MySQLDialect
+   mail:
+      host: smtp.gmail.com
+      port: 587
+      username: fptsosytem@gmail.com
+      password: mayconmeo@A
+      properties:
+         mail:
+            smtp:
+               starttls:
+                  enable: true
+server:
+   port: 2403
+   servlet:
+      context-path: /digital-sign
+application:
+   expiryTimeOut: 60
+   language: vi
+   email: dev@fpt.com.vn
+   systemCode: DigitalSign
+   signType: PFX
+   pfxConfig:
+      pfxURL: D:\MyProject\Signed_ListProject\project\digital-sign\pfx\Le_Van_Phuc.pfx
+      pfxPassWord: 123456789
+      pfxAlias: phuclv
+      pfxType: PKCS12
+logging:
+   level:
+      ROOT: INFO
+      com.signhub.core: DEBUG
+   config: classpath:logback-spring.xml
