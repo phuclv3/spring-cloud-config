@@ -1,20 +1,4 @@
 spring:
-#   datasource:
-#      driverClassName: com.mysql.jdbc.Driver
-#      url: jdbc:mysql://localhost:3306/digital_sign?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-#      hikari:
-#         data-source-properties:
-#            characterEncoding: UTF-8
-#      username: root
-#      password: 1234
-#   jpa:
-#      show-sql: true
-#      hibernate:
-#         ddl-auto: none
-#      properties:
-#         hibernate:
-#            format_sql: true
-#            dialect: org.hibernate.dialect.MySQLDialect
    mail:
       host: smtp.gmail.com
       port: 587
@@ -25,36 +9,3 @@ spring:
             smtp:
                starttls:
                   enable: true
-server:
-   port: 2403
-   servlet:
-      context-path: /digital-sign
-application:
-   language: vi
-   email: dev@fpt.com.vn
-   systemCode: DigitalSign
-   signType: PFX
-   pfxConfig:
-      pfxURL: C:\Users\ADMIN\Desktop\digital-sign\pfx\Le_Van_Phuc.pfx
-      pfxPassWord: 123456789
-      pfxAlias: phuclv
-      pfxType: PKCS12
-   authentication:
-      jwt-secret : lodaaaaaa
-      jwt-expiration-ms : 2760000 #(minisecon)
-      users:
-        -
-          username: admin
-          password: $2a$10$uWr7pvStlgNwGMjARBh5Bes/orGFtbPMCayql7xCEoqs5AONJ53SG #1234
-          roles:
-            - ADMIN
-        -
-          username: user
-          password: $2a$10$uWr7pvStlgNwGMjARBh5Bes/orGFtbPMCayql7xCEoqs5AONJ53SG
-          roles:
-            - USER
-logging:
-   level:
-      ROOT: INFO
-      com.signhub.core: DEBUG
-   config: classpath:logback-spring.xml
